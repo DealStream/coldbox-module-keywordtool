@@ -1,0 +1,38 @@
+{
+    "name": "coldbox-module-keywordtool",
+    "slug": "keywordtoolapi",
+    "version": "1.0.0",
+    "author": "DealStream",
+    "type": "modules",
+    "shortDescription": "Keyword Tool API integration for ColdBox applications.",
+    "description": "A ColdBox module that provides keyword search volume and keyword suggestion requests through the Keyword Tool API.",
+    "keywords": [
+        "coldbox",
+        "coldfusion",
+        "cfml",
+        "module",
+        "keyword-tool",
+        "keyword-research",
+        "seo"
+    ],
+    "homepage": "https://github.com/DealStream/coldbox-module-keywordtool",
+    "documentation": "https://github.com/DealStream/coldbox-module-keywordtool#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DealStream/coldbox-module-keywordtool.git"
+    },
+    "bugs": {
+        "url": "https://github.com/DealStream/coldbox-module-keywordtool/issues"
+    },
+    "copyright": "Copyright (c) 2026 DealStream",
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {},
+    "ignore": [
+        ".git/**",
+        ".gitattributes",
+        ".gitignore",
+        "tests/**",
+        "testbox/**"
+    ]
+}
