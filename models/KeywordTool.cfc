@@ -5,7 +5,7 @@ component {
 	property name="controller" inject="coldbox";
 
     KeywordTool function init() {
-		endpoint 	= "https://api.keywordtool.io/v2/search/volume/google";
+		endpoint 	= "https://api.keywordtool.io/v2/search";
 		version 	= "v1";
 		return this;
 	}
@@ -17,7 +17,7 @@ component {
 			"keyword": arguments.keyword,
 		};
 		
-		http url="#endpoint#?apikey=#settings.apiKey#" method="POST" result="cfhttp" {
+		http url="#endpoint#/volume/google?apikey=#settings.apiKey#" method="POST" result="cfhttp" {
 			httpparam type="header" name="Content-Type" value="application/json";
 			httpparam type="body" value="#serializeJSON(requestBody)#";
 		}
@@ -46,5 +46,20 @@ component {
 		}
 									
 		return apiResult;  
+	}
+
+	public struct function getKeywordSuggestion(required string keyword, string countryCode){
+		var cfhttp = {};
+		var  requestBody = {
+			"keyword": arguments.keyword,
+		};
+		if(len(arguments.countryCode)>0){
+			requestBody['country'] = arguments.countryCode;
+		}
+		http url="#endpoint#/suggestions/google?apikey=#settings.apiKey#" method="POST" result="cfhttp" {
+			httpparam type="header" name="Content-Type" value="application/json";
+			httpparam type="body" value="#serializeJSON(requestBody)#";
+		}
+		return parseResponse(cfhttp);
 	}
 }
