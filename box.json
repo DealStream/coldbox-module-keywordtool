@@ -1,7 +1,7 @@
 {
     "name": "coldbox-module-keywordtool",
     "slug": "keywordtoolapi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "DealStream",
     "type": "modules",
     "shortDescription": "Keyword Tool API integration for ColdBox applications.",
